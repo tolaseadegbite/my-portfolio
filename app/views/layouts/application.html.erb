@@ -10,10 +10,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <%= render 'layouts/navbar' %>
+  <body>
+    <div id="main-wrapper">
+      <%= render 'layouts/navbar' %>
 
-  <div class="flex-wrapper">
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-  </div>
+      <div id="flash" class="flash">
+        <%= render "layouts/flash" %>
+      </div>
+
+      <%= yield %>
+
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>
