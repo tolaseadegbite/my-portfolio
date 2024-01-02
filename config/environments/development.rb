@@ -70,4 +70,7 @@ Rails.application.configure do
 
   # devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # trix
+  # Trix.config.css.paragraph = "trix-p"
 end

@@ -1,21 +1,21 @@
 <% provide(:title, "Home") %>
 <div class="bg-light">
     <div class="container main-wrapper pt-5">
-        <section class="row align-items-center main-profile-section py-lg-5">
+        <section class="row align-items-center main-profile-section pb-5">
             <div class="home-callout">
                 <header class="home-headings mb-5">
                     <h1 class="mb-3">Hi there &#128512;! I am Tolase, </h1>
                     <h1>a <span class="main-job-role bg-dark text-light" style='font-family: monospace;'>- Ruby on Rails Developer -</span></h1>
                 </header>
-                <p class="w-75">Thank you so much for visiting my website. It means a lot to me.</p>
-                <p class="w-75">Once more, my name is Tolase. I love building web applications with Ruby on Rails. I would describe myself as a creative person who enjoys coding. I get inspiration from different places and I love to hear people's ideas. My problem-solving skills has helped me multiple times in finding source of problems and developing effective and efficient solutions.</p>
-                <p class="w-75">Most times, I end up coding for long hours, as long as there's food and WIFI lol.</p>
-                <p class="w-75">I do not have any professional experience yet. However, I have some side projects which you can checkout in the section below. <strong>My technical skills include: Command Line, HTML, CSS and Layouts, Bootstrap, Git, Ruby, Ruby on Rails, Minitest, Rspec, AWS S3</strong></p>
-                <p class="w-75 mb-3">If you or anyone you know is hiring and you think I am worth giving a shot, kindly <%= mail_to 'tolasekelvin@gmail.com', 'reach out' %>. It would be much appreciated.</p>
+                <p>I sincerely appreciate you stopping by my website. It has great meaning for me.</p>
+                <p>I am Tolase, yet again. I adore using Ruby on Rails to create web applications. I consider myself to be a creative person that has a passion for coding. I love to hear other people's perspectives and draw inspiration from a variety of sources. My ability to solve difficulties has often assisted me in identifying the root of issues and creating workable solutions.</p>
+                <p>As long as there's food and WiFi, I usually end up coding for extended periods of time.</p>
+                <p>As of right now, I have no professional experience. On the other hand, you can look at my side projects in the section below. <strong>I am proficient in the following technological areas: Command Line, HTML, CSS and Layouts, Bootstrap, Git, Ruby, Ruby on Rails, Minitest, Rspec, AWS S3</strong></p>
+                <p class="w-75 mb-3">Please <%= mail_to 'tolasekelvin@gmail.com', 'get in touch' %> if you or anyone you know is hiring and you believe I am someone worth trying. It would be really valued.</p>
             </div>
             <div class="wrapper-contact mt-3">
-                <%= mail_to 'tolasekelvin@gmail.com', 'Contact me', class: "text-decoration-none btn btn-light border-dark me-2" %>
-                <%= link_to "Projects", projects_path, class: "text-decoration-none btn btn-dark" %>
+                <%= link_to 'Contact me', '#contact', class: "text-decoration-none btn btn-outline me-2 rounded btn-lg" %>
+                <%= link_to "Projects", projects_path, class: "text-decoration-none btn btn-colour-1 rounded btn-lg" %>
             </div>
         </section>  
     </div>
@@ -23,7 +23,7 @@
 
 <div class="container">
 
-    <section class="projects py-5 main-profile-section">
+    <section class="projects pb-5 main-profile-section">
         <div class="text-center">
             <h2 class="my-5">Projects</h2>
             <!--<p class="text-center me-auto" style="margin-bottom: 70px;">I have worked over the months on different levels of rails projects. The experienced acquired from these has equipped me with enough knowledge to take on any rails app.</p>-->
@@ -34,20 +34,24 @@
             <% end %>
         </div>
     </section>
+</div>
 
-    <section class="contact mt-5 main-profile-section text-center">
-        <h2 class="main-articles text-center mb-5">Contact me</h2>
-        <div class="row main-articles-col">
-            <p class="contact">You can connect with me me via <a href="mailto:tolasekelvin@gmail.com" class="text-decoration-none btn btn-dark">email <i class="bi bi-envelope-at-fill"></i></a></p> 
-            <p>or through my social handles</p> 
-            <p>
-                <%= link_to '#', class: "text-dark text-decoration-none" do %>
-                    <i class="bi bi-twitter fs-3"></i>
-                <% end %>
-                <%= link_to '#', class: "text-dark text-decoration-none" do %>
-                    <i class="bi bi-linkedin fs-3"></i>
-                <% end %>
-            </p>
-        </div>
-    </section>
+<div class="bg-black text-white">
+    <div class="container py-3">
+        <section id='contact' class="contact mt-5 main-profile-section text-center">
+            <h2 class="main-articles text-center mb-5">Contact me</h2>
+            <div class="row main-articles-col">
+                <p class="contact">Send me an <a href="mailto:tolasekelvin@gmail.com" class="text-decoration-none btn btn-dark">email <i class="bi bi-envelope-at-fill"></i></a></p> 
+                <p>or</p> 
+                <p>
+                    <%= link_to 'https://www.twitter.com/lashe__', target: '_blank', class: "text-white text-decoration-none" do %>
+                        <i class="bi bi-twitter fs-3 me-3"></i>
+                    <% end %>
+                    <%= link_to 'https://www.linkedin.com/in/tolase-adegbite-548002217', target: '_blank', class: "text-white text-decoration-none" do %>
+                        <i class="bi bi-linkedin fs-3"></i>
+                    <% end %>
+                </p>
+            </div>
+        </section>
+    </div>
 </div>

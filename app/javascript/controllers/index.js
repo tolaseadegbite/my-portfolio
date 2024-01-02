@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import RemovalsController from "./removals_controller.js"
 application.register("removals", RemovalsController)
+
+import TomSelectController from "./tom_select_controller.js"
+application.register("tom-select", TomSelectController)

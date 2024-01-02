@@ -1,0 +1,15 @@
+<% provide(:title,  "Edit #{@project.name}") %>
+
+<div class="container py-5" style="max-width: 850px">
+    <div>
+        <%= link_to @project, class: "text-dark" do %>
+            <span><i class="bi bi-arrow-left fs-1"></i></span>
+            <%# <span class="back">back</span> %>
+        <% end %>
+    </div>
+    <div class="project-copy">
+        <h1 class="mb-3">Edit Project</h1><form action=""></form>
+
+        <%= render 'form' %>
+    </div>
+</div>

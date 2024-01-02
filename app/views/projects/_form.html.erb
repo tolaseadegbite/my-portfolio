@@ -1,0 +1,50 @@
+<%= form_with model: @project do |f| %>
+
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+            <div class="alert alert-danger">
+                The form contains <%= pluralize(@project.errors.count, "error") %>
+            </div>
+            <ul>
+                <% @project.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="mb-3">
+        <h5><%= f.label :name %></h5>
+        <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <h5><%= f.label :description %></h5>
+        <%= f.rich_text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <h5><%= f.label :github_link %></h5>
+        <%= f.text_field :github_link, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <h5><%= f.label :preview_link, "Preview link/demo" %></h5>
+        <%= f.text_field :preview_link, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+        <h5><%= f.label :image, class: "form-label" %></h5>
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", class: "form-control" %>
+    </div>
+
+    <div class="mb-3" data-controller="tom-select">
+        <h5><%= f.label :tags, class: "form-label" %></h5>
+        <%#= f.select :tag_ids, Tag.where(category: "project").pluck(:name, :id), {}, { multiple: true, id: "select-tags" } %>
+        <%= f.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true, id: "select-tags" } %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.submit "Submit project", class: "btn btn-colour-1 rounded" %>
+    </div>
+<% end %>

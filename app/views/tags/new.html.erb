@@ -1,0 +1,14 @@
+<% provide(:title, 'New tag') %>
+
+<div class="container py-5" style="max-width: 540px">
+    <%= link_to tags_path, class: "text-dark" do %>
+        <span><i class="bi bi-arrow-left fs-1"></i></span>
+        <%# <span class="back">back</span> %>
+    <% end %>
+    
+    <div class="project-copy">
+        <h1 class="mb-3">New Tag</h1>
+
+        <%= render 'form', tag: @tag %>
+    </div>
+</div>

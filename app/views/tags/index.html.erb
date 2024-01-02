@@ -1,0 +1,11 @@
+<% provide(:title, "Tags") %>
+
+<div class="container py-5 text-center">
+  <%= link_to "New tag", new_tag_path, class: "btn btn-dark  mb-3" %>
+  <div class="project-copy">
+      <h1 class="pb-3">Tags</h1>
+      <% @tags.each do |tag| %>
+        <%= link_to tag.name, tag, class: "btn btn btn-light border" %>
+      <% end %>
+  </div>
+</div>

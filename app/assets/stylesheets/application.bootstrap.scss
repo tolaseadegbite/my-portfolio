@@ -1,8 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+// @import 'tom-select/dist/css/tom-select.css';
+@import "tom-select/dist/css/tom-select.bootstrap5.min";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&family=Oswald:wght@500&display=swap');
 
 @import 'custom';
 @import 'components/navbar';
+@import 'components/buttons';
 @import 'config/animations';
 @import 'config/variables';
-@import 'components/flash';@import 'actiontext.css';
+@import 'components/flash';
+@import 'actiontext.css';

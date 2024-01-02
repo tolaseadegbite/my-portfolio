@@ -1,0 +1,17 @@
+<% provide(:title, "My projects") %>
+
+<div class="container py-5 text-center">
+    <%= link_to "New project", new_project_path, class: "btn btn-dark  mb-3" if user_signed_in? && current_user.admin %>
+    <div class="project-copy my-3">
+        <h1>Projects</h1>
+        <!--<p>I have worked over the months on different levels of rails applications. The experienced acquired from these has equipped me with enough knowledge totake on any rails app.</p>-->
+    </div>
+
+    <div id="projects" class="row">
+        <%= render @projects %>
+    </div>
+
+    <div class="text-center mt-2">
+        <%= will_paginate(@projects) %>
+    </div>
+</div>
