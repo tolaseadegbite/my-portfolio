@@ -6,3 +6,11 @@
 #
 
 
+tolase:
+  username: lashe
+  email: michael@example.com
+  admin: true
+
+archer:
+  username: arca
+  email: duchess@example.gov
