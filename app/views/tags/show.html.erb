@@ -1,7 +1,7 @@
 <% provide(:title, @tag.name) %>
 
 <div class="container py-5 text-center">
-  <%= link_to "New tag", new_tag_path, class: "btn btn-dark  mb-3" %>
+  <%= link_to "New tag", new_tag_path, class: "btn btn-dark  mb-3" if current_user && current_user.admin %>
   <h2 class="pb-3"><%= @tag.name %></h2>
   <div class="row">
       <% @tag.projects.each do |project| %>

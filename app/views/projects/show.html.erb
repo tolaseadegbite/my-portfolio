@@ -31,7 +31,7 @@
             <h1 class="mb-3"><%= @project.name %></h1>
             <div class="project-tags mb-3"><strong>Technologies:</strong>
                 <% @project.tags.each do |tag| %>
-                    <%= link_to tag.name, tag, class: "btn btn-outline rounded btn-sm text-sm" %>
+                    <%= link_to tag.name, tag, class: "btn btn-outline rounded btn-sm text-sm mb-2" %>
                 <% end %>
             </div>
             <div class="project-img mb-3">
@@ -48,7 +48,7 @@
         </div>
         <p><%= @project.description %></p>
         <div class="text-center">
-            <%= link_to 'Contact me', '#contact', class: "text-decoration-none btn btn-outline me-2 rounded btn-lg" %>
+            <%= mail_to 'tolasekelvin@gmail.com', 'Contact me', class: "text-decoration-none btn btn-outline me-2 rounded btn-lg" %>
         </div>
     </div>
 </div>
