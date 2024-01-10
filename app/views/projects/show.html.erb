@@ -28,7 +28,7 @@
     </div>
     <div class="project">
         <div class="text-center">
-            <h1 class="mb-3"><%= @project.name %></h1>
+            <h1 class="my-4"><%= @project.name %></h1>
             <div class="project-tags mb-3"><strong>Technologies:</strong>
                 <% @project.tags.each do |tag| %>
                     <%= link_to tag.name, tag, class: "btn btn-outline rounded btn-sm text-sm mb-2" %>

@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
     before_action :correct_create_user, only: %i[ new create ]
 
     def index
-        @projects = Project.includes(:user, image_attachment: :blob).paginate(page: params[:page]).order(created_at: :desc)
+        @projects = Project.includes(:user, image_attachment: :blob).paginate(page: params[:page]).order(id: :desc)
     end
 
     def new
