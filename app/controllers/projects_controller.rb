@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
     before_action :authenticate_user!, only: %i[ new create edit update destroy ]
     before_action :find_project, only: %i[ edit show update destroy ]
-    before_action :correct_user, only: %i[ edit update destroy ]
-    before_action :correct_create_user, only: %i[ new create ]
+    # before_action :correct_user, only: %i[ edit update destroy ]
+    # before_action :correct_create_user, only: %i[ new create ]
 
     def index
         @projects = Project.includes(:user, image_attachment: :blob).paginate(page: params[:page]).order(id: :desc)
@@ -53,15 +53,17 @@ class ProjectsController < ApplicationController
 
         def find_project
             @project ||= Project.find(params[:id])
+
+            redirect_to(projects_url, status: :see_other, notice: "Access denied") unless current_user.admin?
         end
 
         # confirms the correct user
-        def correct_create_user
-            redirect_to(projects_url, status: :see_other, notice: "Access denied") unless current_user.admin?
-        end
+        # def correct_create_user
+        #     redirect_to(projects_url, status: :see_other, notice: "Access denied") unless current_user.admin?
+        # end
 
         # confirms the correct user for project creation
-        def correct_user
-            redirect_to(projects_url, status: :see_other, notice: "Access denied") unless current_user.admin?
-        end
+        # def correct_user
+        #     redirect_to(projects_url, status: :see_other, notice: "Access denied") unless current_user.admin?
+        # end
 end
